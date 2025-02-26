@@ -1,14 +1,24 @@
 import axios from "../api/axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [movies, setMovies] = useState([]);
+
   const fetchMovies = () => {
     axios.get("/movies").then((res) => {
-      console.log(res.data);
+      setMovies(res.data);
     });
   };
 
   useEffect(fetchMovies, []);
 
-  return <h1>HomePage</h1>;
+  return (
+    <>
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </>
+  );
 }
