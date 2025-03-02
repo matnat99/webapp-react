@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+body {
+  background-color: #c0cdcf;
+  font-family: "Montserrat", sans-serif;
+}
+
+header ul *:hover {
+  color: lightgray;
+}
+
+footer ul *:hover {
+  color: white;
+}
