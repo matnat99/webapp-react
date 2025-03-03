@@ -30,6 +30,7 @@ export default function HomePage() {
               title={movie.title}
               director={movie.director}
               content={movie.abstract}
+              vote={movie.avg_vote}
               link={`/movies/${movie.id}`}
             />
           </li>
