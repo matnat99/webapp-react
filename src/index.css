@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
+/* GENERAL */
 body {
   background-color: #c0cdcf;
   font-family: "Montserrat", sans-serif;
 }
 
-header ul *:hover {
-  color: lightgray;
+/* HEADER */
+header h1 {
+  color: rgb(0, 0, 53);
 }
 
+header ul *:hover {
+  color: rgb(0, 0, 53);
+}
+
+/* FOOTER */
 footer ul *:hover {
   color: white;
 }

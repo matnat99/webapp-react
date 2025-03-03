@@ -1,5 +1,6 @@
 import Button from "../components/ui/Button";
 import Heading from "../components/ui/Heading";
+import Card from "../components/ui/Card";
 
 export default function DesignSystem() {
   return (
@@ -31,6 +32,17 @@ export default function DesignSystem() {
         <Button variant="secondary" size="lg">
           Secondary lg
         </Button>
+      </section>
+      <hr />
+      <section>
+        <Heading level={3}>Cards</Heading>
+        <div className="w-96">
+          <Card
+            image={"http://localhost:3000/img/inception.jpg"}
+            title={"Titolo Film"}
+            content={"Prova"}
+          />
+        </div>
       </section>
     </div>
   );
