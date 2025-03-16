@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Heading from "../components/ui/Heading";
 import Stars from "../components/ui/Stars";
+import FormAddReviews from "../components/FormAddReviews";
 
 export default function MoviePage() {
   const { id } = useParams();
@@ -36,7 +37,10 @@ export default function MoviePage() {
           <img className="w-full" src={movie.image} alt={movie.title} />
         </div>
         <div className="col-span-12 md:col-span-8 p-4 space-y-2">
-          <Heading level={3}>{movie.title}</Heading>
+          <div className="flex justify-between items-center">
+            <Heading level={3}>{movie.title}</Heading>
+            <Stars vote={movie.avg_vote} />
+          </div>
           <Heading level={5}>
             <strong>Regista:</strong> {movie.director}
           </Heading>
@@ -67,6 +71,12 @@ export default function MoviePage() {
         ) : (
           <p>Nessuna recensione disponibile.</p>
         )}
+      </div>
+      <div className="flex justify-center">
+        <div className="mt-6 p-4 bg-white rounded-xl shadow-md shadow-black w-full md:w-2/3">
+          <Heading level={4}>Aggiungi una recensione</Heading>
+          <FormAddReviews onFormSubmitted={fetchMovie} />
+        </div>
       </div>
     </div>
   );
